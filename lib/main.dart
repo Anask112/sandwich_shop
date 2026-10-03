@@ -12,8 +12,15 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Sandwich Shop App',
       home: Scaffold(
-        appBar: AppBar(title: const Text('Sandwich Counter')),
-        body: const Center(child: OrderItemDisplay(5, 'Footlong')),
+        appBar: AppBar(
+          title: const Text('My Sandwich Shop'),
+          backgroundColor: Colors.orange,
+        ),
+        body: Center(child: OrderItemDisplay(5, 'Footlong')),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
+        ),
       ),
     );
   }
@@ -23,7 +30,7 @@ class OrderItemDisplay extends StatelessWidget {
   final String itemType;
   final int quantity;
 
-  const OrderItemDisplay(this.quantity, this.itemType, {super.key});
+  OrderItemDisplay(this.quantity, this.itemType, {super.key});
 
   @override
   Widget build(BuildContext context) {
